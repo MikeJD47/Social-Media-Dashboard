@@ -1,0 +1,340 @@
+:root {
+  --lime-green: hsl(163, 72%, 41%);
+  --bright-red: hsl(356, 69%, 56%);
+
+  --facebook: hsl(208, 92%, 53%);
+  --twitter: hsl(203, 89%, 53%);
+  --instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+  --youTube: hsl(348, 97%, 39%);
+
+  /*DARK*/
+  --toggle-dark: linear-gradient(hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+  /*Neutral*/
+  --very-dark-blue: hsl(230, 17%, 14%); /*(BG)*/
+  --dark-blue: hsl(232, 19%, 15%); /*(Top BG Pattern)*/
+  --dark-desaturated-blue: hsl(228, 28%, 20%); /*(Card BG)*/
+  --desaturated-blue: hsl(228, 34%, 66%); /*(Text)*/
+  --dark-white: hsl(0, 0%, 100%); /*(Text)*/
+
+  /*LIGHT*/
+  --toggle-light: hsl(230, 22%, 74%);
+  /*Neutral*/
+  --white: hsl(0, 0%, 100%); /*(BG)*/
+  --very-pale-blue: hsl(225, 100%, 98%); /*(Top BG Pattern)*/
+  --light-grayish-blue: hsl(227, 47%, 96%); /*(Card BG)*/
+  --dark-grayish-blue: hsl(228, 12%, 44%); /*(Text)*/
+  --very-dark-blue: hsl(230, 17%, 14%); /*(Text)*/
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+
+.inter {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400, 700;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--very-dark-blue);
+  font-family: "Inter";
+  position: relative;
+}
+
+h1,
+h2 {
+  color: var(--dark-white);
+}
+
+p {
+  color: var(--desaturated-blue);
+}
+
+.green {
+  color: var(--lime-green);
+}
+.red {
+  color: var(--bright-red);
+}
+
+header {
+  width: auto;
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 200px;
+}
+
+header:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 300px;
+  top: 0;
+  left: 0;
+  background-color: var(--dark-blue);
+  border-radius: 0 0 20px 20px;
+  z-index: -1;
+}
+
+.main-heading h1 {
+  margin-bottom: 0;
+}
+
+.main-heading p {
+  margin-top: 5px;
+}
+
+.toggle-div {
+  width: 300px;
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.toggle-div label {
+  color: var(--desaturated-blue);
+  padding: 0 20px;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.toggle-div input {
+  position: relative;
+  width: 70px;
+  height: 30px;
+  appearance: none;
+  border-radius: 15px;
+  box-shadow: inset 0 0 5px black;
+  transition: background-color 1s;
+  background: var(--toggle-dark);
+  cursor: pointer;
+}
+
+input:checked {
+  transition: background-color 1s, transform 1s;
+  background: var(--very-pale-blue);
+}
+
+input:before {
+  content: "";
+  position: absolute;
+  background-color: var(--very-dark-blue);
+  width: 24px;
+  height: 24px;
+  top: 2.5px;
+  left: 5px;
+  border-radius: 100%;
+  transition: background-color 1s, transform 1s;
+}
+
+input:checked:before {
+  background-color: var(--toggle-light);
+  transform: translateX(35px);
+}
+
+.platforms {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 200px;
+  width: auto;
+  height: 250px;
+}
+
+.platform {
+  background-color: var(--dark-desaturated-blue);
+  width: 21%;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-around;
+  border-radius: 5px;
+  color: var(--desaturated-blue);
+  box-sizing: border-box;
+}
+
+.platform.facebook {
+  border-top: 5px solid var(--facebook);
+}
+.platform.twitter {
+  border-top: 5px solid var(--twitter);
+}
+.platform.instagram {
+  box-sizing: border-box;
+  position: relative;
+  /* border-top: 20px solid transparent; */
+  overflow: hidden;
+  z-index: 2;
+  margin: 0;
+}
+
+.platform.instagram:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: var(--instagram);
+}
+.platform.youtube {
+  border-top: 5px solid var(--youTube);
+}
+
+.platform > div {
+  width: 100%;
+}
+
+.platform * {
+  margin: 0;
+}
+
+.platform img {
+  padding: 0 5px;
+}
+
+.top-of-plat {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7rem;
+}
+
+.total-text {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+.total-num {
+  color: var(--dark-white);
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.platform-stats {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stat-icon {
+  width: fit-content;
+  height: fit-content;
+}
+
+.overview {
+  margin: 20px 200px;
+  width: auto;
+  height: 100%;
+}
+
+.overview-stats {
+  display: flex;
+  height: 300px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-shrink: 2;
+}
+
+.stat-block {
+  box-sizing: border-box;
+  width: 21%;
+  height: 125px;
+  background-color: var(--dark-desaturated-blue);
+  display: grid;
+  grid: 1fr 1fr / 1fr 1fr;
+  padding: 10px 30px;
+  border-radius: 5px;
+}
+
+.stat-block > * {
+  margin: 0;
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+}
+.stat-block img {
+  width: auto;
+  height: auto;
+}
+
+.stat-block > :nth-child(2n) {
+  justify-content: end;
+}
+
+.quantity {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--dark-white);
+}
+
+@media screen and (max-width: 1250px) {
+  body {
+    height: auto;
+    width: 350px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  header {
+    margin: 0 auto;
+    flex-direction: column;
+  }
+
+  header:after {
+    width: 100vw;
+    left: initial;
+  }
+
+  .toggle-div {
+    width: 100%;
+    height: auto;
+    justify-content: space-between;
+  }
+
+  .platforms {
+    flex-direction: column;
+    width: 250px;
+    height: auto;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .platform,
+  .platform.platform.instagram {
+    width: 100%;
+    height: 150px;
+    margin-top: 20px;
+  }
+
+  .overview {
+    margin: 0 auto;
+  }
+
+  .overview-stats {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 250px;
+  }
+  .stat-block {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+  }
+}
