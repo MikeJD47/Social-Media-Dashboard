@@ -35,7 +35,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [git repo](https://github.com/MikeJD47/Social-Media-Dashboard)
-- Live Site URL: [Social media Dashboard](https://your-live-site-url.com)
+- Live Site URL: [Social media Dashboard](https://mikejd47.github.io/Social-Media-Dashboard/)
 
 ## My process
 
